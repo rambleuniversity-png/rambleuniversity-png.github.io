@@ -879,9 +879,10 @@
     <p class="section-eyebrow" style="text-align:center;">Stay connected</p>
     <h2 class="section-title">You belong here</h2>
     <p class="section-body">New courses, tools, and ideas from all eight departments — delivered when there's something worth saying.</p>
-    <form class="email-form" onsubmit="return false;">
-      <input type="email" placeholder="your@email.com" aria-label="Email address">
+    <form class="email-form" action="https://formspree.io/f/xojbrlvl" method="POST">
+      <input type="email" name="email" placeholder="your@email.com" aria-label="Email address" required>
       <button type="submit">Join the List</button>
+    <input type="hidden" name="_subject" value="New Ramble University Signup!">
     </form>
   </div>
 </section>
