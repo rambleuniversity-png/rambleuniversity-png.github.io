@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ramble University — Education for the Inner Life</title>
+<meta name="description" content="Ramble University is a place for people who know their most important education happens somewhere textbooks don't reach. Explore 8 departments at the intersection of inner wisdom, ancient knowledge, and radical imagination.">
+<meta property="og:title" content="Ramble University">
+<meta property="og:description" content="Education for the inner life. Courses, coaching, and creative work at the intersection of wisdom, imagination, and self-governance.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ru-ink: #1C1828;
+    --ru-parchment: #F5F0E8;
+    --ru-cream: #FAF7F2;
+    --ru-purple-deep: #26215C;
+    --ru-purple-mid: #3C3489;
+    --ru-purple-bright: #534AB7;
+    --ru-purple-light: #EEEDFE;
+    --ru-green-deep: #085041;
+    --ru-green-mid: #0F6E56;
+    --ru-green-light: #E1F5EE;
+    --ru-gold: #BA7517;
+    --ru-gold-light: #FAEEDA;
+    --ru-serif: 'Cormorant Garamond', Georgia, serif;
+    --ru-sans: 'DM Sans', system-ui, sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--ru-sans);
+    background: var(--ru-cream);
+    color: var(--ru-ink);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.25rem 4rem;
+    background: rgba(250,247,242,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(60,52,137,0.1);
+  }
+  .nav-logo {
+    font-family: var(--ru-serif);
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--ru-purple-deep);
+    text-decoration: none;
+  }
+  .nav-links {
+    display: flex; gap: 2.5rem; list-style: none;
+  }
+  .nav-links a {
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--ru-purple-mid);
+    text-decoration: none;
+    opacity: 0.75;
+    transition: opacity 0.2s;
+  }
+  .nav-links a:hover { opacity: 1; }
+  .nav-cta {
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--ru-cream);
+    background: var(--ru-purple-mid);
+    padding: 0.6rem 1.4rem;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--ru-purple-deep); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 8rem 2rem 6rem;
+    position: relative;
+    overflow: hidden;
+    background: var(--ru-purple-deep);
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: 
+      radial-gradient(ellipse 60% 50% at 20% 40%, rgba(83,74,183,0.25) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 60% at 80% 60%, rgba(15,110,86,0.2) 0%, transparent 60%),
+      var(--ru-purple-deep);
+    pointer-events: none;
+  }
+  .hero-rule {
+    width: 40px; height: 1px;
+    background: rgba(245,240,232,0.35);
+    margin: 0 auto 2rem;
+  }
+  .hero-eyebrow {
+    font-family: var(--ru-sans);
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.55);
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+  .hero h1 {
+    font-family: var(--ru-serif);
+    font-size: clamp(3.2rem, 8vw, 6.5rem);
+    font-weight: 300;
+    line-height: 1.05;
+    color: var(--ru-parchment);
+    letter-spacing: -0.01em;
+    max-width: 840px;
+    margin: 0 auto 1.5rem;
+    position: relative;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: rgba(245,240,232,0.65);
+  }
+  .hero-sub {
+    font-family: var(--ru-serif);
+    font-size: 1.3rem;
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(245,240,232,0.6);
+    max-width: 520px;
+    margin: 0 auto 3rem;
+    line-height: 1.7;
+    position: relative;
+  }
+  .hero-actions {
+    display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+    position: relative;
+  }
+  .btn-primary {
+    font-family: var(--ru-sans);
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--ru-purple-deep);
+    background: var(--ru-parchment);
+    padding: 0.85rem 2.2rem;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: background 0.2s, color 0.2s;
+  }
+  .btn-primary:hover { background: #fff; }
+  .btn-ghost {
+    font-family: var(--ru-sans);
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: rgba(245,240,232,0.75);
+    background: transparent;
+    padding: 0.85rem 2.2rem;
+    text-decoration: none;
+    border: 1px solid rgba(245,240,232,0.25);
+    border-radius: 2px;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-ghost:hover { border-color: rgba(245,240,232,0.6); color: var(--ru-parchment); }
+  .hero-scroll {
+    position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+    opacity: 0.35;
+  }
+  .hero-scroll span {
+    font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--ru-parchment);
+  }
+  .scroll-line {
+    width: 1px; height: 40px;
+    background: linear-gradient(to bottom, var(--ru-parchment), transparent);
+  }
+
+  /* SECTION COMMONS */
+  section { padding: 7rem 4rem; }
+  .section-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ru-purple-bright);
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+  .section-title {
+    font-family: var(--ru-serif);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--ru-purple-deep);
+    margin-bottom: 1.5rem;
+  }
+  .section-body {
+    font-size: 1.05rem;
+    font-weight: 300;
+    line-height: 1.85;
+    color: rgba(28,24,40,0.72);
+    max-width: 600px;
+  }
+
+  /* ABOUT */
+  .about { background: var(--ru-cream); }
+  .about-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1.1fr; gap: 6rem; align-items: center;
+  }
+  .about-quote {
+    font-family: var(--ru-serif);
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.4;
+    color: var(--ru-purple-deep);
+    padding-left: 2rem;
+    border-left: 2px solid var(--ru-purple-bright);
+  }
+  .about-pillars {
+    display: flex; flex-direction: column; gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+  .about-pillar {
+    display: flex; gap: 1.2rem; align-items: flex-start;
+  }
+  .pillar-num {
+    font-family: var(--ru-serif);
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: var(--ru-purple-bright);
+    opacity: 0.4;
+    line-height: 1;
+    flex-shrink: 0;
+    width: 2rem;
+  }
+  .pillar-text strong {
+    display: block;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--ru-purple-deep);
+    margin-bottom: 0.25rem;
+  }
+  .pillar-text p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: rgba(28,24,40,0.65);
+    font-weight: 300;
+  }
+
+  /* DEPARTMENTS */
+  .departments { background: var(--ru-parchment); }
+  .departments-inner { max-width: 1100px; margin: 0 auto; }
+  .dept-header { margin-bottom: 4rem; }
+  .dept-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5px;
+    background: rgba(60,52,137,0.12);
+    border: 1px solid rgba(60,52,137,0.12);
+  }
+  .dept-card {
+    background: var(--ru-parchment);
+    padding: 2.2rem 1.8rem 2rem;
+    cursor: pointer;
+    transition: background 0.25s;
+    position: relative;
+    overflow: hidden;
+  }
+  .dept-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: var(--dept-color, var(--ru-purple-bright));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+  .dept-card:hover { background: var(--ru-cream); }
+  .dept-card:hover::before { transform: scaleX(1); }
+  .dept-num {
+    font-family: var(--ru-serif);
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--dept-color, var(--ru-purple-bright));
+    opacity: 0.25;
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+  .dept-name {
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--ru-purple-deep);
+    margin-bottom: 0.6rem;
+  }
+  .dept-desc {
+    font-family: var(--ru-serif);
+    font-size: 0.95rem;
+    font-style: italic;
+    color: rgba(28,24,40,0.55);
+    line-height: 1.6;
+  }
+  .dept-tag {
+    display: inline-block;
+    margin-top: 1.2rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--dept-color, var(--ru-purple-bright));
+    opacity: 0.7;
+  }
+
+  /* PRODUCTS */
+  .products { background: var(--ru-purple-deep); }
+  .products-inner { max-width: 1100px; margin: 0 auto; }
+  .products .section-title { color: var(--ru-parchment); }
+  .products .section-eyebrow { color: rgba(245,240,232,0.45); }
+  .products .section-body { color: rgba(245,240,232,0.55); }
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3.5rem;
+  }
+  .product-card {
+    background: rgba(245,240,232,0.05);
+    border: 1px solid rgba(245,240,232,0.1);
+    padding: 2.2rem;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    transition: background 0.25s, border-color 0.25s;
+  }
+  .product-card:hover {
+    background: rgba(245,240,232,0.09);
+    border-color: rgba(245,240,232,0.2);
+  }
+  .product-dept {
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 0.8rem;
+  }
+  .product-title {
+    font-family: var(--ru-serif);
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--ru-parchment);
+    margin-bottom: 0.6rem;
+    line-height: 1.3;
+  }
+  .product-sub {
+    font-family: var(--ru-serif);
+    font-size: 0.92rem;
+    font-style: italic;
+    color: rgba(245,240,232,0.45);
+    margin-bottom: 1.2rem;
+    line-height: 1.6;
+  }
+  .product-body {
+    font-size: 0.85rem;
+    line-height: 1.75;
+    font-weight: 300;
+    color: rgba(245,240,232,0.6);
+    flex: 1;
+    margin-bottom: 2rem;
+  }
+  .product-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid rgba(245,240,232,0.1);
+    padding-top: 1.2rem;
+  }
+  .product-price {
+    font-family: var(--ru-serif);
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--ru-parchment);
+  }
+  .product-link {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-decoration: none;
+    padding-bottom: 2px;
+    border-bottom: 1px solid;
+    transition: opacity 0.2s;
+  }
+  .product-link:hover { opacity: 0.7; }
+
+  /* COACHING */
+  .coaching {
+    background: var(--ru-green-deep);
+    position: relative;
+    overflow: hidden;
+  }
+  .coaching::before {
+    content: '';
+    position: absolute;
+    top: -40%; right: -20%;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: rgba(15,110,86,0.3);
+    pointer-events: none;
+  }
+  .coaching-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+    position: relative;
+  }
+  .coaching .section-title { color: var(--ru-parchment); }
+  .coaching .section-eyebrow { color: rgba(225,245,238,0.5); }
+  .coaching .section-body { color: rgba(225,245,238,0.65); }
+  .coaching-features {
+    display: flex; flex-direction: column; gap: 1.2rem;
+    margin-top: 2.5rem;
+  }
+  .coaching-feature {
+    display: flex; gap: 1rem; align-items: flex-start;
+    padding: 1.2rem 1.4rem;
+    background: rgba(245,240,232,0.06);
+    border: 1px solid rgba(245,240,232,0.1);
+    border-radius: 2px;
+  }
+  .feature-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--ru-green-light);
+    margin-top: 7px;
+    flex-shrink: 0;
+    opacity: 0.7;
+  }
+  .feature-text strong {
+    display: block;
+    font-size: 0.82rem;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+    color: var(--ru-parchment);
+    margin-bottom: 0.2rem;
+  }
+  .feature-text p {
+    font-size: 0.82rem;
+    line-height: 1.65;
+    font-weight: 300;
+    color: rgba(225,245,238,0.55);
+  }
+  .coaching-cta-wrap { margin-top: 3rem; }
+  .btn-coaching {
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--ru-green-deep);
+    background: var(--ru-parchment);
+    padding: 0.85rem 2.2rem;
+    text-decoration: none;
+    border-radius: 2px;
+    display: inline-block;
+    transition: background 0.2s;
+  }
+  .btn-coaching:hover { background: #fff; }
+
+  /* PHILOSOPHY */
+  .philosophy {
+    background: var(--ru-cream);
+    text-align: center;
+  }
+  .philosophy-inner { max-width: 760px; margin: 0 auto; }
+  .philosophy-quote {
+    font-family: var(--ru-serif);
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.5;
+    color: var(--ru-purple-deep);
+    margin-bottom: 2rem;
+  }
+  .philosophy-attr {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ru-purple-bright);
+    opacity: 0.6;
+  }
+  .philosophy-divider {
+    width: 60px; height: 1px;
+    background: rgba(60,52,137,0.2);
+    margin: 3rem auto;
+  }
+  .philosophy-body {
+    font-size: 1.05rem;
+    font-weight: 300;
+    line-height: 1.9;
+    color: rgba(28,24,40,0.65);
+  }
+
+  /* EMAIL */
+  .email-section {
+    background: var(--ru-parchment);
+    text-align: center;
+    padding: 6rem 4rem;
+  }
+  .email-inner { max-width: 540px; margin: 0 auto; }
+  .email-inner .section-title { margin-bottom: 0.75rem; }
+  .email-inner .section-body {
+    margin: 0 auto 2.5rem;
+    text-align: center;
+    font-style: italic;
+    font-family: var(--ru-serif);
+    font-size: 1.05rem;
+  }
+  .email-form {
+    display: flex; gap: 0; max-width: 420px; margin: 0 auto;
+    border: 1px solid rgba(60,52,137,0.25);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .email-form input {
+    flex: 1;
+    border: none;
+    padding: 0.9rem 1.2rem;
+    font-size: 0.9rem;
+    font-family: var(--ru-sans);
+    background: var(--ru-cream);
+    color: var(--ru-ink);
+    outline: none;
+  }
+  .email-form input::placeholder { color: rgba(28,24,40,0.35); }
+  .email-form button {
+    border: none;
+    background: var(--ru-purple-mid);
+    color: var(--ru-cream);
+    padding: 0.9rem 1.4rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: var(--ru-sans);
+    cursor: pointer;
+    transition: background 0.2s;
+    white-space: nowrap;
+  }
+  .email-form button:hover { background: var(--ru-purple-deep); }
+
+  /* FOOTER */
+  footer {
+    background: var(--ru-ink);
+    padding: 4rem;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 3rem;
+  }
+  .footer-brand .nav-logo { color: var(--ru-parchment); font-size: 1.1rem; }
+  .footer-tagline {
+    font-family: var(--ru-serif);
+    font-size: 0.9rem;
+    font-style: italic;
+    color: rgba(245,240,232,0.4);
+    margin-top: 0.75rem;
+    line-height: 1.6;
+  }
+  .footer-col h4 {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: rgba(245,240,232,0.4);
+    margin-bottom: 1.2rem;
+  }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+  .footer-col a {
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: rgba(245,240,232,0.55);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-col a:hover { color: var(--ru-parchment); }
+  .footer-bottom {
+    background: var(--ru-ink);
+    border-top: 1px solid rgba(245,240,232,0.08);
+    padding: 1.5rem 4rem;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .footer-bottom p {
+    font-size: 0.75rem;
+    color: rgba(245,240,232,0.25);
+    letter-spacing: 0.05em;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero-eyebrow { animation: fadeUp 0.8s ease both 0.2s; }
+  .hero h1      { animation: fadeUp 0.8s ease both 0.4s; }
+  .hero-sub     { animation: fadeUp 0.8s ease both 0.6s; }
+  .hero-actions { animation: fadeUp 0.8s ease both 0.8s; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 2rem; }
+    .nav-links { display: none; }
+    section { padding: 5rem 2rem; }
+    .about-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .dept-grid { grid-template-columns: repeat(2, 1fr); }
+    .product-grid { grid-template-columns: 1fr; }
+    .coaching-inner { grid-template-columns: 1fr; gap: 3rem; }
+    footer { grid-template-columns: 1fr 1fr; padding: 3rem 2rem; }
+    .footer-bottom { padding: 1.5rem 2rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+    .email-section { padding: 5rem 2rem; }
+  }
+  @media (max-width: 600px) {
+    .dept-grid { grid-template-columns: 1fr; }
+    footer { grid-template-columns: 1fr; }
+    .email-form { flex-direction: column; }
+    .email-form button { width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Ramble University</a>
+  <ul class="nav-links">
+    <li><a href="#departments">Departments</a></li>
+    <li><a href="#products">Shop</a></li>
+    <li><a href="#coaching">Coaching</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+  <a href="#email" class="nav-cta">Join the List</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <p class="hero-eyebrow">Welcome to Ramble University</p>
+  <h1>Education for <em>the inner life</em></h1>
+  <p class="hero-sub">A place built for people who know their most important education happens somewhere textbooks don't reach.</p>
+  <div class="hero-actions">
+    <a href="#departments" class="btn-primary">Explore the University</a>
+    <a href="#products" class="btn-ghost">Browse the Shop</a>
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div>
+      <p class="section-eyebrow">What we believe</p>
+      <blockquote class="about-quote">"The most significant curriculum you'll ever study is the one hidden inside your own experience."</blockquote>
+      <p class="about-pillars" style="margin-top:2rem; font-size:0.9rem; line-height:1.85; font-weight:300; color:rgba(28,24,40,0.65); max-width:440px;">
+        Ramble University is not your typical school. There are no grades here. No prerequisites. No permission required to begin. This is a place for people who have always felt that something essential lives between the lines of conventional education.
+      </p>
+    </div>
+    <div>
+      <p class="section-eyebrow">Three foundations</p>
+      <div class="about-pillars">
+        <div class="about-pillar">
+          <span class="pillar-num">I</span>
+          <div class="pillar-text">
+            <strong>Inner Exploration</strong>
+            <p>Real self-knowledge isn't found in theory. It's found in the practice of turning toward yourself with curiosity, patience, and honesty.</p>
+          </div>
+        </div>
+        <div class="about-pillar">
+          <span class="pillar-num">II</span>
+          <div class="pillar-text">
+            <strong>Ancient Wisdom</strong>
+            <p>Every tradition that has endured points toward the same underlying truth. We draw from Hermetic philosophy, perennial wisdom, and the knowledge that has outlasted every empire.</p>
+          </div>
+        </div>
+        <div class="about-pillar">
+          <span class="pillar-num">III</span>
+          <div class="pillar-text">
+            <strong>Radical Imagination</strong>
+            <p>The ability to imagine differently is a survival skill. Creativity is not ornamental — it is structural. It belongs at the center of any serious education.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPARTMENTS -->
+<section class="departments" id="departments">
+  <div class="departments-inner">
+    <div class="dept-header">
+      <p class="section-eyebrow">Eight departments</p>
+      <h2 class="section-title">A full curriculum for the whole self</h2>
+      <p class="section-body">Every department at Ramble University exists at the intersection of inner work and outward expression. You don't have to go in order. Start wherever you are.</p>
+    </div>
+    <div class="dept-grid">
+      <div class="dept-card" style="--dept-color: #534AB7;">
+        <div class="dept-num">01</div>
+        <div class="dept-name">Vision & Innovation</div>
+        <div class="dept-desc">Apps, tools, and technology as extensions of creative intelligence</div>
+        <span class="dept-tag">Klip · Tools</span>
+      </div>
+      <div class="dept-card" style="--dept-color: #3C3489;">
+        <div class="dept-num">02</div>
+        <div class="dept-name">Inner Journey</div>
+        <div class="dept-desc">Fiction as a vehicle for transformation — stories that change you from the inside</div>
+        <span class="dept-tag">The Other Brick Road</span>
+      </div>
+      <div class="dept-card" style="--dept-color: #BA7517;">
+        <div class="dept-num">03</div>
+        <div class="dept-name">Ancient Wisdom</div>
+        <div class="dept-desc">Tarot, Hermetic philosophy, and the perennial truths that have always been available</div>
+        <span class="dept-tag">Talkative Tarot</span>
+      </div>
+      <div class="dept-card" style="--dept-color: #0F6E56;">
+        <div class="dept-num">04</div>
+        <div class="dept-name">Sovereign Self</div>
+        <div class="dept-desc">Coaching and certification for people called to help others govern themselves from within</div>
+        <span class="dept-tag">CSLC Certification</span>
+      </div>
+      <div class="dept-card" style="--dept-color: #534AB7;">
+        <div class="dept-num">05</div>
+        <div class="dept-name">Frequency</div>
+        <div class="dept-desc">Music as medicine — sound created to shift, settle, and open</div>
+        <span class="dept-tag">Original Music</span>
+      </div>
+      <div class="dept-card" style="--dept-color: #3C3489;">
+        <div class="dept-num">06</div>
+        <div class="dept-name">Blueprints</div>
+        <div class="dept-desc">Documents, frameworks, and the infrastructure of a well-thought life</div>
+        <span class="dept-tag">I Had A Thought</span>
+      </div>
+      <div class="dept-card" style="--dept-color: #993556;">
+        <div class="dept-num">07</div>
+        <div class="dept-name">Wonder</div>
+        <div class="dept-desc">Games, puzzles, and the kind of play that quietly teaches something essential</div>
+        <span class="dept-tag">Wonderland · Oz</span>
+      </div>
+      <div class="dept-card" style="--dept-color: #085041;">
+        <div class="dept-num">08</div>
+        <div class="dept-name">Extensions</div>
+        <div class="dept-desc">Beauty as a practice — Pinch Extensions and the art of showing up as yourself</div>
+        <span class="dept-tag">Pinch Extensions</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products" id="products">
+  <div class="products-inner">
+    <p class="section-eyebrow">From the shop</p>
+    <h2 class="section-title">Where the work begins</h2>
+    <p class="section-body">Printable guides, digital tools, and curriculum built to meet you where you are. Start free. Go deeper when you're ready.</p>
+    <div class="product-grid">
+      <div class="product-card">
+        <span class="product-dept" style="color: #7F77DD;">Sovereign Self</span>
+        <div class="product-title">Emotional Sovereignty</div>
+        <div class="product-sub">The Space Between</div>
+        <p class="product-body">A complete framework for living in the space between your biggest emotions — where you are the authority, not the reaction. Includes the full workbook, reflection guide, and practice tools.</p>
+        <div class="product-footer">
+          <span class="product-price">$37</span>
+          <a href="YOUR_GUMROAD_LINK_HERE" class="product-link" style="color: #7F77DD; border-color: #7F77DD;">Get the bundle →</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <span class="product-dept" style="color: #5DCAA5;">Wonder</span>
+        <div class="product-title">Cryptogram Collection</div>
+        <div class="product-sub">Decode the wisdom</div>
+        <p class="product-body">Five substitution cipher puzzles built around quotes from Neville Goddard, Lao Tzu, Hermes Trismegistus, and Ramble University. Printable. Solvable. The kind of fun that teaches.</p>
+        <div class="product-footer">
+          <span class="product-price">Free</span>
+          <a href="YOUR_GUMROAD_LINK_HERE" class="product-link" style="color: #5DCAA5; border-color: #5DCAA5;">Download →</a>
+        </div>
+      </div>
+      <div class="product-card" style="border-color: rgba(245,240,232,0.18);">
+        <span class="product-dept" style="color: rgba(245,240,232,0.3);">Coming Soon</span>
+        <div class="product-title" style="color: rgba(245,240,232,0.4);">More arriving soon</div>
+        <div class="product-sub">Across all eight departments</div>
+        <p class="product-body">New guides, frameworks, and digital tools are in development across every department. Join the list to be the first to know when something new drops.</p>
+        <div class="product-footer">
+          <span class="product-price" style="font-size:1rem; color:rgba(245,240,232,0.4);">— —</span>
+          <a href="#email" class="product-link" style="color: rgba(245,240,232,0.45); border-color: rgba(245,240,232,0.2);">Stay informed →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COACHING -->
+<section class="coaching" id="coaching">
+  <div class="coaching-inner">
+    <div>
+      <p class="section-eyebrow">Sovereign Self · Coaching</p>
+      <h2 class="section-title">You already know more than you think you do</h2>
+      <p class="section-body">Sovereign Self coaching isn't about someone handing you a map. It's about helping you discover that you've been the cartographer all along.</p>
+      <div class="coaching-cta-wrap">
+        <a href="#email" class="btn-coaching">Inquire About Coaching</a>
+      </div>
+    </div>
+    <div>
+      <div class="coaching-features">
+        <div class="coaching-feature">
+          <div class="feature-dot"></div>
+          <div class="feature-text">
+            <strong>One-on-one sessions</strong>
+            <p>Private coaching built around your specific terrain — no templates, no scripts, no borrowed frameworks.</p>
+          </div>
+        </div>
+        <div class="coaching-feature">
+          <div class="feature-dot"></div>
+          <div class="feature-text">
+            <strong>Rooted in perennial wisdom</strong>
+            <p>Hermetic law, Vedanta, and wisdom traditions that have stood because they describe something real about the human experience.</p>
+          </div>
+        </div>
+        <div class="coaching-feature">
+          <div class="feature-dot"></div>
+          <div class="feature-text">
+            <strong>CSLC Certification Program</strong>
+            <p>For coaches called to this work — a rigorous, 180-hour certification that treats the coach's inner life as the primary variable.</p>
+          </div>
+        </div>
+        <div class="coaching-feature">
+          <div class="feature-dot"></div>
+          <div class="feature-text">
+            <strong>Emotional sovereignty as foundation</strong>
+            <p>The ability to live between your emotions as the governing authority — this is both the method and the outcome.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="philosophy">
+  <div class="philosophy-inner">
+    <p class="section-eyebrow">The Ramble ethos</p>
+    <div class="philosophy-divider"></div>
+    <blockquote class="philosophy-quote">"The quality of your thought determines your status in the natural world."</blockquote>
+    <p class="philosophy-attr">— Manly P. Hall</p>
+    <div class="philosophy-divider"></div>
+    <p class="philosophy-body">
+      We are not here to give you answers. We are here to create conditions in which you can hear the answers that are already trying to reach you. Every course, every tool, every piece of creative work produced at Ramble University has one purpose: to help you feel inspired, curious, seen, and aware of what is possible.
+    </p>
+  </div>
+</section>
+
+<!-- EMAIL -->
+<section class="email-section" id="email">
+  <div class="email-inner">
+    <p class="section-eyebrow" style="text-align:center;">Stay connected</p>
+    <h2 class="section-title">You belong here</h2>
+    <p class="section-body">New courses, tools, and ideas from all eight departments — delivered when there's something worth saying.</p>
+    <form class="email-form" onsubmit="return false;">
+      <input type="email" placeholder="your@email.com" aria-label="Email address">
+      <button type="submit">Join the List</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    <a href="#" class="nav-logo">Ramble University</a>
+    <p class="footer-tagline">Education for the inner life.<br>Tucson, Arizona · Est. 2026</p>
+  </div>
+  <div class="footer-col">
+    <h4>Departments</h4>
+    <ul>
+      <li><a href="#">Inner Journey</a></li>
+      <li><a href="#">Ancient Wisdom</a></li>
+      <li><a href="#">Sovereign Self</a></li>
+      <li><a href="#">Wonder</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Work with us</h4>
+    <ul>
+      <li><a href="#">Coaching</a></li>
+      <li><a href="#">CSLC Certification</a></li>
+      <li><a href="#">Pinch Extensions</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Follow</h4>
+    <ul>
+      <li><a href="#">Talkative Tarot</a></li>
+      <li><a href="#">I Had A Thought</a></li>
+      <li><a href="https://rambleuniversity.com">rambleuniversity.com</a></li>
+    </ul>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <p>© 2026 Ramble University · All rights reserved</p>
+  <p>rambleuniversity.com</p>
+</div>
+
+</body>
+</html>
