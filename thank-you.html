@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You — Ramble University</title>
+  <meta name="description" content="Thank you for joining Ramble University updates." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --cream:#fbf7ef; --plum:#241c4f; --green:#0b5d4b; --gold:#b87922; --white:#fffdf9; --ink:#171322; --serif:'Cormorant Garamond', Georgia, serif; --sans:'DM Sans', system-ui, sans-serif; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { min-height:100vh; display:grid; place-items:center; padding:2rem; font-family:var(--sans); background:linear-gradient(135deg, rgba(36,28,79,.96), rgba(11,93,75,.9)); color:var(--white); }
+    .card { width:min(760px,100%); background:rgba(251,247,239,.1); border:1px solid rgba(251,247,239,.18); border-radius:36px; padding:clamp(2rem,6vw,4rem); box-shadow:0 30px 90px rgba(0,0,0,.28); text-align:center; backdrop-filter:blur(18px); }
+    .eyebrow { text-transform:uppercase; letter-spacing:.2em; font-size:.72rem; font-weight:800; color:#faeed8; margin-bottom:1rem; }
+    h1 { font-family:var(--serif); font-size:clamp(3rem,8vw,5.5rem); font-weight:400; line-height:1; color:var(--cream); letter-spacing:-.035em; }
+    p { margin:1.3rem auto 0; max-width:560px; color:rgba(251,247,239,.76); font-size:1.08rem; line-height:1.75; font-weight:300; }
+    .btns { display:flex; gap:.8rem; justify-content:center; flex-wrap:wrap; margin-top:2rem; }
+    a { display:inline-flex; align-items:center; justify-content:center; border-radius:999px; padding:.95rem 1.25rem; text-decoration:none; text-transform:uppercase; letter-spacing:.12em; font-size:.74rem; font-weight:800; }
+    .primary { background:var(--cream); color:var(--plum); }
+    .ghost { border:1px solid rgba(251,247,239,.28); color:var(--cream); }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <p class="eyebrow">You are on the roll</p>
+    <h1>Welcome to the Ramble.</h1>
+    <p>Your note has been received. New Wonder Department releases, printable tools, cryptogram drops, and Personal Governance updates will have a place to find you.</p>
+    <div class="btns">
+      <a class="primary" href="shop.html">Return to shop</a>
+      <a class="ghost" href="index.html">Visit campus</a>
+    </div>
+  </main>
+</body>
+</html>
