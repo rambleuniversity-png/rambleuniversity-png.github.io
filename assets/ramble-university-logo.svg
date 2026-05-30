@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+  <title id="title">Ramble University Logo</title>
+  <desc id="desc">Ramble University crest and wordmark in navy, parchment, moss green, and antique gold.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fbf7ef"/>
+      <stop offset="0.55" stop-color="#dfe8dd"/>
+      <stop offset="1" stop-color="#b9c8bc"/>
+    </linearGradient>
+    <linearGradient id="shield" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0f2f3e"/>
+      <stop offset="1" stop-color="#071b2a"/>
+    </linearGradient>
+    <style>
+      .navy{fill:#071b2a}.gold{fill:#b79a68}.cream{fill:#fbf7ef}.green{fill:#2f4a37}.moss{fill:#5f7464}.line{stroke:#b79a68;stroke-width:7;stroke-linecap:round}.thin{stroke:#071b2a;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}.word{font-family:Georgia,'Times New Roman',serif;font-weight:700;letter-spacing:.22em}.sub{font-family:Georgia,'Times New Roman',serif;font-style:italic;letter-spacing:.05em}.sign{font-family:Arial,Helvetica,sans-serif;font-weight:700;letter-spacing:.06em}
+    </style>
+  </defs>
+  <rect width="1200" height="420" fill="#fbf7ef"/>
+  <g transform="translate(80 40)">
+    <path d="M170 10 C235 35 300 35 365 10 L365 188 C365 258 315 312 267 340 L170 390 L73 340 C25 312 -25 258 -25 188 L-25 10 C40 35 105 35 170 10 Z" fill="url(#shield)"/>
+    <path d="M170 32 C226 52 288 52 342 32 L342 185 C342 244 300 288 258 313 L170 360 L82 313 C40 288 -2 244 -2 185 L-2 32 C52 52 114 52 170 32 Z" fill="url(#sky)"/>
+    <path d="M2 190 C70 125 127 130 190 178 C235 210 289 205 342 162 L342 185 C342 244 300 288 258 313 L170 360 L82 313 C40 288 2 244 2 190 Z" fill="#5f7464" opacity=".72"/>
+    <path d="M55 218 C115 194 180 204 233 236 C272 260 308 260 342 242 L342 185 C302 218 246 230 196 198 C139 162 74 168 2 223 C9 258 42 293 82 313 L170 360 L258 313 C300 288 335 250 342 209 C294 246 244 246 202 221 C154 192 99 195 55 218 Z" fill="#2f4a37" opacity=".75"/>
+    <path d="M170 190 C188 156 208 134 230 124 C251 114 270 114 286 122" fill="none" class="thin" opacity=".45"/>
+    <path d="M147 248 C168 224 197 197 232 170" fill="none" stroke="#fbf7ef" stroke-width="10" stroke-linecap="round" opacity=".85"/>
+    <path d="M92 251 C145 236 196 236 248 251" fill="none" stroke="#071b2a" stroke-width="10" stroke-linecap="round"/>
+    <path d="M92 251 C145 263 196 263 248 251" fill="none" stroke="#071b2a" stroke-width="10" stroke-linecap="round"/>
+    <path d="M170 246 L170 282" stroke="#b79a68" stroke-width="5" stroke-linecap="round"/>
+    <text x="170" y="325" text-anchor="middle" font-family="Georgia,serif" font-size="58" fill="#fbf7ef">R</text>
+    <path d="M70 125 L145 125" class="line"/><path d="M70 155 L145 155" class="line"/><path d="M70 185 L145 185" class="line"/>
+    <polygon points="145,112 190,125 145,138" fill="#7d5d35"/><polygon points="145,142 190,155 145,168" fill="#7d5d35"/><polygon points="145,172 190,185 145,198" fill="#7d5d35"/>
+    <text class="sign" x="86" y="130" font-size="14" fill="#fbf7ef">CURIOSITY</text>
+    <text class="sign" x="87" y="160" font-size="14" fill="#fbf7ef">CREATIVITY</text>
+    <text class="sign" x="86" y="190" font-size="14" fill="#fbf7ef">GROWTH</text>
+    <path d="M390 255 C430 292 470 292 510 255" fill="none" stroke="#b79a68" stroke-width="9" stroke-linecap="round" transform="translate(-380 28)"/>
+    <path d="M-8 285 C30 300 58 317 82 342" fill="none" stroke="#b79a68" stroke-width="9" stroke-linecap="round"/>
+    <path d="M348 285 C310 300 282 317 258 342" fill="none" stroke="#b79a68" stroke-width="9" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(470 104)">
+    <text class="word navy" x="0" y="74" font-size="76">RAMBLE</text>
+    <line x1="3" y1="118" x2="505" y2="118" stroke="#b79a68" stroke-width="4"/>
+    <text class="word gold" x="5" y="172" font-size="44">UNIVERSITY</text>
+    <text class="sub navy" x="8" y="226" font-size="33">where wandering minds find home</text>
+  </g>
+</svg>
