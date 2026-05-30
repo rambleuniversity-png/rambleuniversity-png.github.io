@@ -10,7 +10,7 @@
   <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=DM+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
       --ink: #171322;
@@ -30,42 +30,24 @@
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body {
-      font-family: var(--sans);
-      color: var(--ink);
-      background: var(--cream);
-      line-height: 1.65;
-      overflow-x: hidden;
-    }
+    body { font-family: var(--sans); color: var(--ink); background: var(--cream); line-height: 1.65; overflow-x: hidden; }
     a { color: inherit; }
     .skip-link { position: absolute; left: -999px; top: 1rem; background: var(--plum); color: var(--white); padding: .7rem 1rem; z-index: 1000; }
     .skip-link:focus { left: 1rem; }
-    nav {
-      position: fixed;
-      inset: 0 0 auto 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 2rem;
-      padding: 1rem clamp(1rem, 4vw, 4rem);
-      background: rgba(251, 247, 239, .88);
-      border-bottom: 1px solid rgba(36,28,79,.11);
-      backdrop-filter: blur(16px);
-    }
+    nav { position: fixed; inset: 0 0 auto 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; gap: 2rem; padding: 1rem clamp(1rem, 4vw, 4rem); background: rgba(251, 247, 239, .9); border-bottom: 1px solid rgba(36,28,79,.11); backdrop-filter: blur(16px); }
     .brand { display: flex; align-items: center; gap: .8rem; text-decoration: none; min-width: max-content; }
     .brand-mark { width: 38px; height: 38px; border: 1px solid rgba(36,28,79,.23); border-radius: 999px; display: grid; place-items: center; background: var(--white); box-shadow: 0 10px 25px rgba(36,28,79,.08); }
     .brand-mark::before { content: ''; width: 14px; height: 14px; border-radius: 2px; background: linear-gradient(135deg, var(--terracotta), var(--gold)); transform: rotate(8deg); }
     .brand-text strong { display: block; font-family: var(--serif); font-size: 1.25rem; line-height: 1; color: var(--plum); letter-spacing: .01em; }
     .brand-text span { display: block; font-size: .63rem; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); margin-top: .22rem; }
     .nav-links { display: flex; list-style: none; gap: clamp(1rem, 2vw, 2.2rem); align-items: center; }
-    .nav-links a { text-decoration: none; text-transform: uppercase; letter-spacing: .13em; font-size: .72rem; font-weight: 700; color: rgba(36,28,79,.72); }
+    .nav-links a { text-decoration: none; text-transform: uppercase; letter-spacing: .13em; font-size: .72rem; font-weight: 800; color: rgba(36,28,79,.72); }
     .nav-links a:hover { color: var(--plum); }
-    .nav-cta { text-decoration: none; background: var(--plum); color: var(--white); padding: .7rem 1.05rem; border-radius: 999px; text-transform: uppercase; letter-spacing: .11em; font-size: .7rem; font-weight: 700; box-shadow: 0 12px 30px rgba(36,28,79,.18); }
+    .nav-cta { text-decoration: none; background: var(--plum); color: var(--white); padding: .7rem 1.05rem; border-radius: 999px; text-transform: uppercase; letter-spacing: .11em; font-size: .7rem; font-weight: 800; box-shadow: 0 12px 30px rgba(36,28,79,.18); }
     main { padding-top: 68px; }
     section { padding: clamp(4.5rem, 8vw, 7.5rem) clamp(1.1rem, 5vw, 4rem); }
     .wrap { width: min(1120px, 100%); margin: 0 auto; }
-    .eyebrow { text-transform: uppercase; letter-spacing: .2em; font-size: .72rem; font-weight: 800; color: var(--gold); margin-bottom: 1rem; }
+    .eyebrow { text-transform: uppercase; letter-spacing: .2em; font-size: .72rem; font-weight: 900; color: var(--gold); margin-bottom: 1rem; }
     h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.05; color: var(--plum); }
     h1 { font-size: clamp(3.2rem, 9vw, 7.3rem); letter-spacing: -.035em; }
     h2 { font-size: clamp(2.35rem, 5vw, 4.25rem); letter-spacing: -.025em; }
@@ -73,11 +55,12 @@
     .lead { font-size: clamp(1.05rem, 2vw, 1.25rem); color: rgba(23,19,34,.72); max-width: 720px; font-weight: 300; }
     .serif-note { font-family: var(--serif); font-style: italic; font-size: clamp(1.25rem, 3vw, 1.7rem); color: rgba(36,28,79,.72); line-height: 1.55; }
     .button-row { display: flex; flex-wrap: wrap; gap: .85rem; align-items: center; margin-top: 2rem; }
-    .btn { display: inline-flex; align-items: center; justify-content: center; gap: .55rem; text-decoration: none; border-radius: 999px; padding: .95rem 1.3rem; font-size: .75rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; transition: transform .18s ease, box-shadow .18s ease, background .18s ease; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: .55rem; text-decoration: none; border-radius: 999px; padding: .95rem 1.3rem; font-size: .75rem; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; transition: transform .18s ease, box-shadow .18s ease, background .18s ease; }
     .btn:hover { transform: translateY(-2px); }
     .btn-primary { background: var(--plum); color: var(--white); box-shadow: 0 18px 40px rgba(36,28,79,.2); }
     .btn-secondary { border: 1px solid rgba(36,28,79,.2); color: var(--plum); background: rgba(255,255,255,.48); }
     .btn-light { background: var(--white); color: var(--plum); }
+    .btn-payhip { background: #645bff; color: var(--white); box-shadow: 0 18px 40px rgba(100,91,255,.23); }
     .hero { position: relative; overflow: hidden; min-height: calc(100vh - 68px); display: grid; place-items: center; background: linear-gradient(135deg, rgba(36,28,79,.95), rgba(18,79,64,.88)); color: var(--white); }
     .hero::before, .hero::after { content: ''; position: absolute; border-radius: 999px; pointer-events: none; }
     .hero::before { width: 44rem; height: 44rem; left: -18rem; top: 5rem; background: radial-gradient(circle, rgba(250,247,239,.16), transparent 65%); }
@@ -122,12 +105,14 @@
     .product-art { min-height: 170px; padding: 1.2rem; background: linear-gradient(135deg, rgba(36,28,79,.94), rgba(11,93,75,.85)); display: flex; align-items: end; color: var(--cream); }
     .product-art span { font-family: var(--serif); font-size: 2rem; line-height: 1; max-width: 250px; }
     .product-body { padding: 1.35rem; display: flex; flex-direction: column; gap: .8rem; flex: 1; }
-    .tag { display: inline-flex; width: fit-content; border-radius: 999px; background: var(--gold-soft); color: #7c4f17; padding: .35rem .65rem; text-transform: uppercase; letter-spacing: .11em; font-size: .64rem; font-weight: 800; }
+    .tag { display: inline-flex; width: fit-content; border-radius: 999px; background: var(--gold-soft); color: #7c4f17; padding: .35rem .65rem; text-transform: uppercase; letter-spacing: .11em; font-size: .64rem; font-weight: 900; }
     .product-card h3 { font-size: 1.8rem; }
     .product-card p { color: rgba(23,19,34,.68); font-weight: 300; }
     .product-list { list-style: none; display: grid; gap: .45rem; margin-top: auto; }
     .product-list li { color: rgba(23,19,34,.72); font-size: .92rem; }
     .product-list li::before { content: '✦'; color: var(--gold); margin-right: .45rem; }
+    .product-actions { display: grid; gap: .55rem; margin-top: 1rem; }
+    .product-actions .btn { width: 100%; padding: .82rem .9rem; border-radius: 18px; font-size: .68rem; }
     .wonder-band { background: var(--plum); color: var(--cream); position: relative; overflow: hidden; }
     .wonder-band::before { content: ''; position: absolute; width: 35rem; height: 35rem; right: -13rem; top: -18rem; background: radial-gradient(circle, rgba(184,121,34,.22), transparent 62%); border-radius: 50%; }
     .wonder-grid { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 6vw, 5rem); align-items: center; }
@@ -149,27 +134,8 @@
     .footer-inner { width: min(1120px, 100%); margin: 0 auto; display: flex; justify-content: space-between; gap: 1.2rem; flex-wrap: wrap; align-items: center; font-size: .85rem; }
     footer strong { color: var(--cream); font-family: var(--serif); font-size: 1.15rem; }
     footer a { color: rgba(251,247,239,.8); text-decoration: none; }
-    @media (max-width: 920px) {
-      .nav-links { display: none; }
-      .hero-inner, .intro-grid, .wonder-grid { grid-template-columns: 1fr; }
-      .quote-panel { position: static; }
-      .dept-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .product-grid { grid-template-columns: 1fr; }
-      .section-head { display: block; }
-      .section-head .lead { margin-top: 1rem; }
-    }
-    @media (max-width: 560px) {
-      nav { padding: .85rem 1rem; }
-      .brand-text span { display: none; }
-      .nav-cta { display: none; }
-      main { padding-top: 62px; }
-      .hero { min-height: auto; padding-top: 3rem; padding-bottom: 3rem; }
-      .hero-card { border-radius: 24px; }
-      .micro-grid, .dept-grid, .manifesto-lines { grid-template-columns: 1fr; }
-      .sigil { min-height: 230px; }
-      .sigil-ring { width: 145px; height: 145px; }
-      .sigil-center { width: 58px; height: 58px; }
-    }
+    @media (max-width: 920px) { .nav-links { display: none; } .hero-inner, .intro-grid, .wonder-grid { grid-template-columns: 1fr; } .quote-panel { position: static; } .dept-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .product-grid { grid-template-columns: 1fr; } .section-head { display: block; } .section-head .lead { margin-top: 1rem; } }
+    @media (max-width: 560px) { nav { padding: .85rem 1rem; } .brand-text span { display: none; } .nav-cta { display: none; } main { padding-top: 62px; } .hero { min-height: auto; padding-top: 3rem; padding-bottom: 3rem; } .hero-card { border-radius: 24px; } .micro-grid, .dept-grid, .manifesto-lines { grid-template-columns: 1fr; } .sigil { min-height: 230px; } .sigil-ring { width: 145px; height: 145px; } .sigil-center { width: 58px; height: 58px; } }
   </style>
 </head>
 <body>
@@ -183,9 +149,9 @@
       <li><a href="#about">About</a></li>
       <li><a href="#departments">Departments</a></li>
       <li><a href="#products">Offerings</a></li>
-      <li><a href="#wonder">Wonder Dept.</a></li>
+      <li><a href="shop.html">Shop</a></li>
     </ul>
-    <a class="nav-cta" href="#products">Enter the shop</a>
+    <a class="nav-cta" href="shop.html">Shop now</a>
   </nav>
   <main id="main">
     <section class="hero" id="top">
@@ -195,7 +161,8 @@
           <h1>Where wandering minds <em>find home.</em></h1>
           <p class="hero-copy">Ramble University is part academy, part sanctuary, part creative laboratory — built for reflective people who learn through curiosity, symbolism, story, self-governance, and a little beautiful mischief.</p>
           <div class="button-row">
-            <a class="btn btn-light" href="#products">Explore offerings</a>
+            <a class="btn btn-payhip" href="https://payhip.com/b/pav7V" target="_blank" rel="noopener">Buy Ring the Alarm</a>
+            <a class="btn btn-light" href="shop.html">Open the shop</a>
             <a class="btn btn-secondary" href="#departments">Meet the departments</a>
           </div>
         </div>
@@ -246,16 +213,16 @@
         <h2>Printable tools for the reflective, curious, tender, and brilliantly complicated.</h2>
         <p class="lead">Start with the Wonder Department collection, then move deeper into Personal Governance and Emotional Sovereignty as the campus expands.</p>
         <div class="product-grid">
-          <article class="product-card"><div class="product-art"><span>Ring the Alarm</span></div><div class="product-body"><span class="tag">Cryptogram collection</span><h3>Ring the Alarm</h3><p>A reflective cryptogram puzzle book for people who love decoding hidden messages and meeting themselves between the letters.</p><ul class="product-list"><li>Original reflective cryptograms</li><li>Journaling pauses and symbolic themes</li><li>Built for printable digital delivery</li></ul></div></article>
-          <article class="product-card"><div class="product-art"><span>Emotional Sovereignty</span></div><div class="product-body"><span class="tag">Workbook pathway</span><h3>The Space Between</h3><p>A guided workbook experience about noticing the pause between feeling, story, reaction, and choice.</p><ul class="product-list"><li>Reflection pages and prompts</li><li>Boundary and pattern awareness</li><li>A bridge into deeper coursework</li></ul></div></article>
-          <article class="product-card"><div class="product-art"><span>Personal Governance</span></div><div class="product-body"><span class="tag">Signature framework</span><h3>The Inner House</h3><p>A self-inquiry system for mapping the parts, offices, and departments within your inner world.</p><ul class="product-list"><li>Emotional departments and roles</li><li>Survival office mapping</li><li>Designed to become a full course</li></ul></div></article>
+          <article class="product-card"><div class="product-art"><span>Ring the Alarm</span></div><div class="product-body"><span class="tag">Live · Cryptogram collection</span><h3>Ring the Alarm</h3><p>A reflective cryptogram puzzle book for people who love decoding hidden messages and meeting themselves between the letters.</p><ul class="product-list"><li>Original reflective cryptograms</li><li>Journaling pauses and symbolic themes</li><li>Built for printable digital delivery</li></ul><div class="product-actions"><a class="btn btn-payhip" href="https://payhip.com/b/pav7V" target="_blank" rel="noopener">Buy on Payhip</a><a class="btn btn-secondary" href="shop.html">View shop page</a></div></div></article>
+          <article class="product-card"><div class="product-art"><span>Emotional Sovereignty</span></div><div class="product-body"><span class="tag">Workbook pathway</span><h3>The Space Between</h3><p>A guided workbook experience about noticing the pause between feeling, story, reaction, and choice.</p><ul class="product-list"><li>Reflection pages and prompts</li><li>Boundary and pattern awareness</li><li>A bridge into deeper coursework</li></ul><div class="product-actions"><a class="btn btn-primary" href="shop.html">Preview in shop</a><a class="btn btn-secondary" href="mailto:etheircosmos@gmail.com?subject=The%20Space%20Between%20Waitlist">Join release list</a></div></div></article>
+          <article class="product-card"><div class="product-art"><span>Personal Governance</span></div><div class="product-body"><span class="tag">Signature framework</span><h3>The Inner House</h3><p>A self-inquiry system for mapping the parts, offices, and departments within your inner world.</p><ul class="product-list"><li>Emotional departments and roles</li><li>Survival office mapping</li><li>Designed to become a full course</li></ul><div class="product-actions"><a class="btn btn-primary" href="shop.html">Preview in shop</a><a class="btn btn-secondary" href="mailto:etheircosmos@gmail.com?subject=Personal%20Governance%20Waitlist">Join waitlist</a></div></div></article>
         </div>
-        <div class="button-row"><a class="btn btn-primary" href="mailto:etheircosmos@gmail.com?subject=Ramble%20University%20Shop%20Inquiry">Request the current catalog</a><a class="btn btn-secondary" href="#wonder">Learn the method</a></div>
+        <div class="button-row"><a class="btn btn-payhip" href="https://payhip.com/b/pav7V" target="_blank" rel="noopener">Buy Ring the Alarm now</a><a class="btn btn-primary" href="shop.html">Open full shop</a><a class="btn btn-secondary" href="#wonder">Learn the method</a></div>
       </div>
     </section>
     <section id="wonder" class="wonder-band">
       <div class="wrap wonder-grid">
-        <div><p class="eyebrow">The Wonder Department</p><h2>Where puzzles become portals.</h2><p class="lead">The Wonder Department creates products that feel playful at first glance and surprisingly intimate by the final page. Cryptograms, word searches, symbolic coloring pages, and journal prompts become a soft way into deeper self-recognition.</p><div class="button-row"><a class="btn btn-light" href="#products">See featured tools</a></div></div>
+        <div><p class="eyebrow">The Wonder Department</p><h2>Where puzzles become portals.</h2><p class="lead">The Wonder Department creates products that feel playful at first glance and surprisingly intimate by the final page. Cryptograms, word searches, symbolic coloring pages, and journal prompts become a soft way into deeper self-recognition.</p><div class="button-row"><a class="btn btn-light" href="shop.html">Shop Wonder Department</a><a class="btn btn-secondary" href="#products">See featured tools</a></div></div>
         <div class="steps"><div class="step"><strong>Decode</strong><p>Solve the message. Let the mind focus, hunt, and uncover.</p></div><div class="step"><strong>Reflect</strong><p>Pause with the phrase. Ask what it touches, teaches, or refuses to let you ignore.</p></div><div class="step"><strong>Integrate</strong><p>Color, journal, circle, repeat, and let the insight become something you can hold.</p></div></div>
       </div>
     </section>
@@ -272,7 +239,7 @@
         <p class="eyebrow">Enrollment is energetic</p>
         <h2>Come as you are: curious, complicated, brilliant, healing, playful, skeptical, tender, or mid-ramble.</h2>
         <p class="lead">Ramble University is being built in real time as a home for products, courses, creative archives, and tools for people learning how to live from the inside out.</p>
-        <div class="button-row"><a class="btn btn-light" href="mailto:etheircosmos@gmail.com?subject=Ramble%20University">Contact Ramble University</a><a class="btn btn-secondary" href="#top">Back to the top</a></div>
+        <div class="button-row"><a class="btn btn-payhip" href="https://payhip.com/b/pav7V" target="_blank" rel="noopener">Buy Ring the Alarm</a><a class="btn btn-light" href="shop.html">Visit the shop</a><a class="btn btn-secondary" href="#top">Back to the top</a></div>
         <small>Educational, reflective, creative, and entertainment resources. Not a substitute for medical, legal, financial, or mental health care.</small>
       </div>
     </section>
